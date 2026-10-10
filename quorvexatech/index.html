@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuorvexaTech | Web Development & Digital Solutions</title>
+    <meta
+      name="description"
+      content="QuorvexaTech builds responsive business websites, online stores, landing pages and custom React.js sites with WordPress, Shopify and modern web tools."
+    />
+    <meta name="theme-color" content="#0f1b3d" />
+    <link rel="canonical" href="https://quorvexatech.com/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="QuorvexaTech" />
+    <meta property="og:title" content="QuorvexaTech | Web Development & Digital Solutions" />
+    <meta
+      property="og:description"
+      content="We Build Digital Experiences That Grow Your Business."
+    />
+    <meta property="og:url" content="https://quorvexatech.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--
+      Netlify Forms detection: Netlify reads this static form at deploy time so it knows
+      the form exists and which fields it has. The real form is the React ContactForm,
+      which posts to "/" with form-name=contact. Field names MUST match ContactForm.jsx.
+    -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="phone" />
+      <input type="text" name="service" />
+      <textarea name="description"></textarea>
+      <input type="text" name="budget" />
+      <input type="text" name="timeline" />
+    </form>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

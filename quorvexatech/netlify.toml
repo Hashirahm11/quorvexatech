@@ -1,0 +1,9 @@
+# Netlify build settings.
+# The SPA fallback redirect lives in public/_redirects (it is copied into dist/
+# on every build, so it also works with a manual drag-and-drop deploy).
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"

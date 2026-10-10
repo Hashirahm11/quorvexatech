@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --color-navy-950: #0a1128;
+  --color-navy-900: #0f1b3d;
+  --color-navy-800: #16264f;
+  --color-navy-700: #1f3366;
+  --color-navy-600: #3a4a74;
+  --color-navy-500: #5b6a8f;
+
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+
+  --shadow-soft: 0 10px 40px -12px rgb(15 27 61 / 0.14);
+  --shadow-lift: 0 24px 60px -20px rgb(37 99 235 / 0.28);
+
+  --animate-rise: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-float: float 7s ease-in-out infinite;
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-white font-sans text-navy-900 antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 { @apply tracking-tight; }
+  :focus-visible {
+    outline: 3px solid var(--color-brand-500);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+  .section-y { @apply py-16 sm:py-20 lg:py-24; }
+  .field-input {
+    @apply w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-navy-900 shadow-sm transition placeholder:text-slate-400 hover:border-slate-400 focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-100;
+  }
+  .field-input[aria-invalid="true"] {
+    @apply border-red-500 focus:border-red-500 focus:ring-red-100;
+  }
+}
