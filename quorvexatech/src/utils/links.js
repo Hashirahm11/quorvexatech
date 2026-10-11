@@ -35,3 +35,21 @@ export const getSocialItems = () => {
     { id: 'email', label: 'Email', url: getEmailUrl(), primary: true },
   ];
 };
+
+/** Builds the WhatsApp message (heading + client details) from the contact form values. */
+export const buildWhatsAppMessage = (v) =>
+  [
+    '*New Website Inquiry - QuorvexaTech*',
+    '',
+    `*Name:* ${v.name}`,
+    `*Email:* ${v.email}`,
+    v.phone ? `*Phone/WhatsApp:* ${v.phone}` : null,
+    `*Service:* ${v.service}`,
+    `*Budget:* ${v.budget}`,
+    `*Timeline:* ${v.timeline}`,
+    '',
+    '*Project details:*',
+    v.description,
+  ]
+    .filter((line) => line !== null)
+    .join('\n');

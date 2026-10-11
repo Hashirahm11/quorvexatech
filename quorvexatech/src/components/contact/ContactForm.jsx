@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { FiCheckCircle, FiAlertCircle } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
 import siteConfig from '../../config/siteConfig';
 import { serviceOptions } from '../../data/services';
 import { budgetOptions, timelineOptions } from '../../data/budgetOptions';
-import { getEmailUrl, getWhatsAppUrl } from '../../utils/links';
+import { getEmailUrl, getWhatsAppUrl, buildWhatsAppMessage } from '../../utils/links';
 
 const emptyValues = {
   name: '', email: '', phone: '', service: '', description: '', budget: '', timeline: '', 'bot-field': '',
@@ -51,6 +52,7 @@ export default function ContactForm({ prefill }) {
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle'); // idle | submitting | success | error
   const [errorMessage, setErrorMessage] = useState('');
+  const [submitted, setSubmitted] = useState(null); // copy of the last sent details (for the WhatsApp button)
 
   useEffect(() => {
     if (!prefill) return;
@@ -112,6 +114,7 @@ export default function ContactForm({ prefill }) {
           });
 
       if (!response.ok) throw new Error(`Request failed with status ${response.status}`);
+      setSubmitted(payload);
       setValues(emptyValues);
       setStatus('success');
     } catch {
@@ -123,12 +126,38 @@ export default function ContactForm({ prefill }) {
   const whatsapp = getWhatsAppUrl();
   const email = getEmailUrl();
 
+  // Opens WhatsApp with a ready-made message. The client still taps Send inside WhatsApp.
+  const openWhatsApp = (data) => {
+    const url = getWhatsAppUrl(buildWhatsAppMessage(data));
+    if (url) window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleWhatsApp = () => {
+    const found = validate(values);
+    setErrors(found);
+    const firstInvalid = Object.keys(found)[0];
+    if (firstInvalid) {
+      document.getElementById(`field-${firstInvalid}`)?.focus();
+      return;
+    }
+    openWhatsApp(values);
+  };
+
   if (status === 'success') {
     return (
       <div role="status" className="rounded-3xl border border-emerald-200 bg-emerald-50 p-8 text-center">
         <FiCheckCircle aria-hidden="true" className="mx-auto text-4xl text-emerald-600" />
         <h3 className="mt-4 text-2xl font-bold text-navy-900">Message sent</h3>
         <p className="mt-2 text-navy-700">Thank you. We have received your project details and will get back to you by email.</p>
+        {whatsapp && submitted && (
+          <button
+            type="button"
+            onClick={() => openWhatsApp(submitted)}
+            className="mt-6 inline-flex items-center gap-2 rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
+          >
+            <FaWhatsapp aria-hidden="true" /> Also send these details on WhatsApp
+          </button>
+        )}
         <button
           type="button"
           onClick={() => setStatus('idle')}
@@ -212,6 +241,15 @@ export default function ContactForm({ prefill }) {
       >
         {status === 'submitting' ? 'Sending…' : 'Send Message'}
       </button>
+      {whatsapp && (
+        <button
+          type="button"
+          onClick={handleWhatsApp}
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-emerald-600 px-6 py-3.5 text-base font-semibold text-emerald-700 transition hover:bg-emerald-50"
+        >
+          <FaWhatsapp aria-hidden="true" /> Send via WhatsApp instead
+        </button>
+      )}
       <p className="text-center text-sm text-navy-500">We only use your details to reply to this inquiry.</p>
     </form>
   );
