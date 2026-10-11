@@ -49,7 +49,7 @@ export default function ProjectCard({ project }) {
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full bg-brand-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-700"
+              className="inline-flex min-h-11 items-center gap-1.5 rounded-full bg-brand-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-700"
             >
               Visit Live Site <FiExternalLink aria-hidden="true" />
               <span className="sr-only"> for {title} (opens in a new tab)</span>
@@ -61,7 +61,7 @@ export default function ProjectCard({ project }) {
                 href={caseStudyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full border border-navy-900/15 px-4 py-2 text-sm font-semibold text-navy-900 transition hover:border-brand-500 hover:text-brand-700"
+                className="inline-flex min-h-11 items-center gap-1.5 rounded-full border border-navy-900/15 px-4 py-2 text-sm font-semibold text-navy-900 transition hover:border-brand-500 hover:text-brand-700"
               >
                 Project Details <FiArrowRight aria-hidden="true" />
                 <span className="sr-only"> for {title} (opens in a new tab)</span>
@@ -69,7 +69,7 @@ export default function ProjectCard({ project }) {
             ) : (
               <Link
                 to={caseStudyUrl}
-                className="inline-flex items-center gap-1.5 rounded-full border border-navy-900/15 px-4 py-2 text-sm font-semibold text-navy-900 transition hover:border-brand-500 hover:text-brand-700"
+                className="inline-flex min-h-11 items-center gap-1.5 rounded-full border border-navy-900/15 px-4 py-2 text-sm font-semibold text-navy-900 transition hover:border-brand-500 hover:text-brand-700"
               >
                 Project Details <FiArrowRight aria-hidden="true" />
                 <span className="sr-only"> for {title}</span>

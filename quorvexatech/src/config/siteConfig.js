@@ -18,7 +18,7 @@ const siteConfig = {
 
   // ---- Contact -------------------------------------------------
   email: 'hashirg620@gmail.com',
-whatsappNumber: '92336861622',
+  whatsappNumber: '+923368616282',
   whatsappMessage: "Hello QuorvexaTech, I'd like to discuss a website project.",
 
   // ---- Social profiles ----------------------------------------
@@ -46,10 +46,10 @@ whatsappNumber: '92336861622',
   // Leave both empty until a real address is available. The map only appears when
   // mapEmbedUrl is a genuine embed URL (Google Maps -> Share -> Embed a map -> copy the src="..." URL).
   location: {
-  label: 'Our location',
-  address: 'Gulberg III, Lahore, Pakistan',
-  mapEmbedUrl: 'https://maps.google.com/maps?q=31.5105453,74.3412813&z=15&output=embed',
-},
+    label: 'Our location',
+    address: 'Gulberg III, Lahore, Pakistan',
+    mapEmbedUrl: 'https://maps.google.com/maps?q=31.5105453,74.3412813&z=15&output=embed',
+  },
 
   // ---- Contact form --------------------------------------------
   // The form uses Formspree when VITE_FORMSPREE_ENDPOINT is set, otherwise Netlify Forms.

@@ -18,16 +18,16 @@ const icons = {
 
 const styles = {
   bar: {
-    link: 'h-8 w-8 text-white/75 hover:bg-white/10 hover:text-white',
-    off: 'h-8 w-8 text-white/30',
+    link: 'h-11 w-11 text-white/75 hover:bg-white/10 hover:text-white sm:h-8 sm:w-8',
+    off: 'h-11 w-11 text-white/30 sm:h-8 sm:w-8',
   },
   light: {
-    link: 'h-10 w-10 bg-brand-50 text-brand-700 hover:bg-brand-600 hover:text-white',
-    off: 'h-10 w-10 bg-slate-100 text-slate-400',
+    link: 'h-11 w-11 bg-brand-50 text-brand-700 hover:bg-brand-600 hover:text-white sm:h-10 sm:w-10',
+    off: 'h-11 w-11 bg-slate-100 text-slate-400 sm:h-10 sm:w-10',
   },
   dark: {
-    link: 'h-10 w-10 bg-white/10 text-white hover:bg-brand-500',
-    off: 'h-10 w-10 bg-white/5 text-white/35',
+    link: 'h-11 w-11 bg-white/10 text-white hover:bg-brand-500 sm:h-10 sm:w-10',
+    off: 'h-11 w-11 bg-white/5 text-white/35 sm:h-10 sm:w-10',
   },
 };
 
@@ -42,7 +42,7 @@ export default function SocialLinks({ variant = 'light', compactOnMobile = false
     <ul className={`flex flex-wrap items-center gap-1.5 ${className}`} aria-label="Social media and professional profiles">
       {getSocialItems().map((item) => {
         const Icon = icons[item.id];
-        const hide = compactOnMobile && !item.primary ? 'hidden sm:inline-flex' : 'inline-flex';
+        const hide = compactOnMobile && !item.primary ? '!hidden sm:!inline-flex' : 'inline-flex';
         const shared = `${hide} items-center justify-center rounded-full text-[15px] transition`;
         const isExternal = item.id !== 'email';
         return (

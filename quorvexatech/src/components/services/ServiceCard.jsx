@@ -14,7 +14,7 @@ export default function ServiceCard({ service, compact = false }) {
       id={slug}
       className="group flex h-full scroll-mt-32 flex-col rounded-3xl border border-slate-200 bg-white p-7 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-lift"
     >
-      <span className="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-xl text-white shadow-md">
+      <span className="grid h-12 w-12 place-items-center rounded-2xl bg-linear-to-br from-brand-500 to-brand-700 text-xl text-white shadow-md">
         <Icon aria-hidden="true" />
       </span>
       <h3 className="mt-5 text-xl font-bold leading-snug text-navy-900">{title}</h3>
@@ -31,13 +31,16 @@ export default function ServiceCard({ service, compact = false }) {
 
       <div className="mt-auto pt-7">
         {compact ? (
-          <Link to={`/services#${slug}`} className="text-sm font-semibold text-brand-700 hover:text-brand-800 hover:underline">
+          <Link
+            to={`/services#${slug}`}
+            className="inline-flex min-h-11 items-center text-sm font-semibold text-brand-700 hover:text-brand-800 hover:underline"
+          >
             See details<span className="sr-only"> about {title}</span>
           </Link>
         ) : (
           <Link
             to={`/contact?service=${encodeURIComponent(title)}#contact-form`}
-            className="inline-flex w-full items-center justify-center rounded-full bg-brand-50 px-5 py-2.5 text-sm font-semibold text-brand-700 transition hover:bg-brand-600 hover:text-white"
+            className="inline-flex min-h-11 w-full items-center justify-center rounded-full bg-brand-50 px-5 py-2.5 text-sm font-semibold text-brand-700 transition hover:bg-brand-600 hover:text-white"
           >
             Get a Quote<span className="sr-only"> for {title}</span>
           </Link>

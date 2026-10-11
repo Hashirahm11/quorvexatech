@@ -47,7 +47,7 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button to="/contact#consultation" className="hidden !px-5 !py-2.5 sm:inline-flex">Free Consultation</Button>
+          <Button to="/contact#consultation" className="!hidden !px-5 !py-2.5 sm:!inline-flex">Free Consultation</Button>
           <button
             type="button"
             className="grid h-11 w-11 place-items-center rounded-xl border border-slate-200 text-xl text-navy-900 transition hover:bg-slate-50 lg:hidden"

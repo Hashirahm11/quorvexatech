@@ -11,7 +11,7 @@ export default function ProjectFilters({ active, onChange, counts = {} }) {
             type="button"
             onClick={() => onChange(id)}
             aria-pressed={isActive}
-            className={`rounded-full border px-5 py-2.5 text-sm font-semibold transition ${
+            className={`min-h-11 rounded-full border px-4 py-2.5 text-sm font-semibold transition sm:px-5 ${
               isActive
                 ? 'border-brand-600 bg-brand-600 text-white shadow-md shadow-brand-600/25'
                 : 'border-slate-300 bg-white text-navy-700 hover:border-brand-400 hover:text-brand-700'
