@@ -18,7 +18,7 @@ const siteConfig = {
 
   // ---- Contact -------------------------------------------------
   email: 'hashirg620@gmail.com',
-  whatsappNumber: '+923368616282',
+  whatsappNumber: '+92 3368616282',
   whatsappMessage: "Hello QuorvexaTech, I'd like to discuss a website project.",
 
   // ---- Social profiles ----------------------------------------

@@ -7,8 +7,11 @@ export const isConfigured = (value) =>
 export const getEmailUrl = () => (isConfigured(siteConfig.email) ? `mailto:${siteConfig.email}` : null);
 
 export const getWhatsAppUrl = (message = siteConfig.whatsappMessage) => {
-  const number = siteConfig.whatsappNumber;
-  if (!isConfigured(number) || !/^\d{7,15}$/.test(number)) return null;
+  const configuredNumber = siteConfig.whatsappNumber;
+  if (!isConfigured(configuredNumber)) return null;
+
+  const number = configuredNumber.replace(/\D/g, '');
+  if (!/^\d{7,15}$/.test(number)) return null;
   return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 };
 
