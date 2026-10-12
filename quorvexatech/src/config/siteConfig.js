@@ -17,7 +17,7 @@ const siteConfig = {
     'QuorvexaTech is a growing web development studio building responsive business websites, online stores, landing pages and custom React.js sites.',
 
   // ---- Contact -------------------------------------------------
-  email: 'hashirg620@gmail.com',
+  email: 'quorvexatech@gmail.com',
   whatsappNumber: '+92 3368616282',
   whatsappMessage: "Hello QuorvexaTech, I'd like to discuss a website project.",
 
