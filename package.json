@@ -1,0 +1,12 @@
+{
+  "name": "quorvexatech-repo",
+  "private": true,
+  "workspaces": [
+    "quorvexatech"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace quorvexatech",
+    "build": "npm run build --workspace quorvexatech",
+    "preview": "npm run preview --workspace quorvexatech"
+  }
+}

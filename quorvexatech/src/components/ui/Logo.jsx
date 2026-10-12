@@ -3,14 +3,15 @@ import siteConfig from '../../config/siteConfig';
 
 export default function Logo({ light = false }) {
   return (
-    <Link to="/" className="inline-flex items-center gap-2.5" aria-label={`${siteConfig.name} home`}>
-      <span
+    <Link to="/" className="inline-flex min-w-0 items-center gap-2.5" aria-label={`${siteConfig.name} home`}>
+      <img
+        src={siteConfig.logo}
+        onError={(event) => { event.currentTarget.src = '/favicon.svg'; }}
+        alt=""
         aria-hidden="true"
-        className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-navy-900 text-lg font-extrabold text-white shadow-md"
-      >
-        Q
-      </span>
-      <span className={`text-xl font-extrabold tracking-tight ${light ? 'text-white' : 'text-navy-900'}`}>
+        className="h-12 w-12 shrink-0 rounded-xl object-contain"
+      />
+      <span className={`whitespace-nowrap text-lg font-extrabold tracking-tight sm:text-xl ${light ? 'text-white' : 'text-navy-900'}`}>
         Quorvexa<span className={light ? 'text-brand-300' : 'text-brand-600'}>Tech</span>
       </span>
     </Link>
