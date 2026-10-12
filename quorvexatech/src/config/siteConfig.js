@@ -12,7 +12,7 @@ const siteConfig = {
   name: 'QuorvexaTech',
   domain: 'quorvexatech.com',
   url: 'https://quorvexatech.com',
-  logo: '/images/logo.jpg',
+  logo: '/images/logo.png',
   tagline: 'We Build Digital Experiences That Grow Your Business.',
   description:
     'QuorvexaTech is a growing web development studio building responsive business websites, online stores, landing pages and custom React.js sites.',
