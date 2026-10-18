@@ -3,6 +3,7 @@ import SocialTopBar from './SocialTopBar';
 import Header from './Header';
 import Footer from './Footer';
 import ScrollToTop from './ScrollToTop';
+import ChatBot from '../chat/ChatBot';
 
 export default function Layout() {
   return (
@@ -20,6 +21,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <ChatBot />
     </>
   );
 }
