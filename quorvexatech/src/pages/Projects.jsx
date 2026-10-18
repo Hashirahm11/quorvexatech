@@ -47,7 +47,7 @@ export default function Projects() {
 
       <section className="section-y" aria-labelledby="portfolio-heading">
         <div className="container-page">
-          <SectionHeading id="portfolio-heading" title="Selected work" description="Showing editable portfolio entries. Entries marked Placeholder are waiting for real project details." />
+          <SectionHeading id="portfolio-heading" title="Selected work" description="A selection of websites and stores built across WordPress, React.js and e-commerce platforms. Filter by category to explore specific work." />
           <div className="mt-10"><ProjectFilters active={category} onChange={changeCategory} counts={counts} /></div>
 
           <div className="mt-12" aria-live="polite">

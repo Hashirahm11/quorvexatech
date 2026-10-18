@@ -65,9 +65,9 @@ function ProjectTile({ project, index }) {
   );
 }
 
-/** Reads real projects (anything without isPlaceholder) from src/data/projects.js. */
+/** Shows projects marked featured: true in src/data/projects.js (up to 6). */
 export default function ProjectShowcase() {
-  const real = projects.filter((p) => !p.isPlaceholder).slice(0, 6);
+  const real = projects.filter((p) => p.featured).slice(0, 6);
   const pattern = spanPatterns[real.length] || [];
   const delivered = reviews.filter((r) => r.project);
   const fiverrUrl = isConfigured(siteConfig.freelancing.fiverr) ? siteConfig.freelancing.fiverr : null;
