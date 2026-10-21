@@ -45,12 +45,12 @@ export const team = [
     links: {},
   },
   {
-    id: 'backend-developer',
-    name: '', // add the full name here
+    id: 'mabroor-ahmad',
+    name: 'Mabroor Ahmad',
     role: 'Backend Developer',
     focus: 'Handles server-side logic, APIs and integrations.',
     skills: [], // add real skills
-    photo: '/images/team/backend-developer.webp',
+    photo: '/images/team/mabroor-ahmad.jpeg',
     links: {},
   },
 ];
