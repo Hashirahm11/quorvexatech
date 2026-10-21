@@ -36,20 +36,20 @@ export const team = [
     },
   },
   {
-    id: 'frontend-ui-developer',
-    name: '', // add the full name here
-    role: 'Frontend UI Developer',
-    focus: 'Turns designs into clean, responsive user interfaces.',
-    skills: [], // add real skills, e.g. ['HTML', 'CSS', 'JavaScript', 'React.js']
+    id: 'zakki-ahmad',
+    name: 'Zakki Ahmad',
+    role: 'WordPress & Shopify Developer',
+    focus: 'Builds and customizes WordPress websites and Shopify stores.',
+    skills: ['WordPress', 'Shopify', 'WooCommerce', 'Yoast', 'Elementor', 'Astra'],
     photo: '/images/team/frontend-ui-developer.webp',
     links: {},
   },
   {
     id: 'mabroor-ahmad',
     name: 'Mabroor Ahmad',
-    role: 'Backend Developer',
-    focus: 'Handles server-side logic, APIs and integrations.',
-    skills: [], // add real skills
+    role: 'Full Stack Developer',
+    focus: 'Builds applications across the frontend, backend and database layers.',
+    skills: ['React.js', 'Next.js', 'Node.js', 'Database', 'PHP', 'Express.js'],
     photo: '/images/team/mabroor-ahmad.jpeg',
     links: {},
   },
