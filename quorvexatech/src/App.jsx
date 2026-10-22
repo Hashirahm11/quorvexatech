@@ -9,11 +9,14 @@ import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 import NotFound from './pages/NotFound';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function App() {
   return (
     <>
     <Analytics />
+    <SpeedInsights />
+
 
     <Routes>
       <Route element={<Layout />}>
