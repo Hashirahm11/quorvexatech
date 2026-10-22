@@ -27,7 +27,7 @@ function Photo({ member, className }) {
       style={{ objectPosition: member.photoPosition || 'top' }}
       className={className}
       fallback={
-        <div role="img" aria-label={`Portrait of ${label}`} className="grid h-full w-full place-items-center bg-gradient-to-br from-brand-600 to-navy-900 text-5xl font-extrabold text-white">
+        <div role="img" aria-label={`Portrait of ${label}`} className="grid h-full w-full place-items-center bg-linear-to-br from-brand-600 to-navy-900 text-5xl font-extrabold text-white">
           {initials(label)}
         </div>
       }
@@ -78,7 +78,7 @@ export default function TeamMemberCard({ member, variant = 'card' }) {
   if (variant === 'featured') {
     return (
       <article className="grid gap-8 overflow-hidden rounded-3xl border border-slate-200 bg-white p-4 shadow-soft sm:p-6 md:grid-cols-[minmax(0,340px)_1fr] lg:gap-12 lg:p-8">
-        <div className="mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl bg-slate-100 md:max-w-none">
+        <div className="mx-auto aspect-4/5 w-full max-w-sm overflow-hidden rounded-2xl bg-slate-100 md:max-w-none">
           <Photo member={member} className="h-full w-full object-cover" />
         </div>
         <div className="flex flex-col justify-center">
@@ -105,7 +105,7 @@ export default function TeamMemberCard({ member, variant = 'card' }) {
 
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-xl">
-      <div className="aspect-[4/5] overflow-hidden bg-slate-100">
+      <div className="aspect-4/5 overflow-hidden bg-slate-100">
         <Photo member={member} className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
       </div>
       <div className="flex flex-1 flex-col p-6">

@@ -8,9 +8,13 @@ import Team from './pages/Team';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 import NotFound from './pages/NotFound';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
   return (
+    <>
+    <Analytics />
+
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
@@ -23,5 +27,6 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
+    </>
   );
 }

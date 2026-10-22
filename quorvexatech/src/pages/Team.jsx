@@ -11,7 +11,7 @@ export default function Team() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-b from-brand-50/80 via-white to-white">
+      <section className="relative overflow-hidden bg-linear-to-b from-brand-50/80 via-white to-white">
         <div aria-hidden="true" className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-brand-200/40 blur-3xl" />
         <div className="container-page relative py-16 sm:py-20 lg:py-24">
           <div className="max-w-3xl animate-rise">
