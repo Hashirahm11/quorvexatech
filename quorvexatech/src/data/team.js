@@ -25,7 +25,7 @@ export const team = [
       'Hashir started QuorvexaTech to build clear, responsive websites for businesses, charities and communities. He leads each project personally, from understanding your goals to launching the finished site.',
       'He works across WordPress, Shopify and React.js, and recommends the platform that fits your project and budget rather than the one that is trendy.',
     ],
-    skills: ['WordPress', 'Elementor', 'WooCommerce', 'Shopify', 'React.js', 'JavaScript', 'HTML', 'CSS', 'Responsive design'],
+    skills: [],
     photo: '/images/team/hashir-mahmood.webp',
     links: {
       linkedin: siteConfig.socials.linkedin,
